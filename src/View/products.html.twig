@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bonjour produits</title>
+</head>
+
+<body>
+    <h1>Mes instruments préférés</h1>
+    <ul>
+    {% for product in products | slice(0, 3) %}
+        <li>{{ product }}</li>
+    {% endfor %}
+    </ul>
+
+    <h1>Les instruments que je n'aime pas</h1>
+    <ul>
+    {% for product in products | slice(3, 4) %}
+        <li>{{ product }}</li>
+    {% endfor %}
+    </ul>
+
+    <h1>Tous les instruments de la liste</h1>
+    {{ dump(products) }}
+</body>
+</html>
